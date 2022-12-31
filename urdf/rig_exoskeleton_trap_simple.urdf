@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="exoskeleton_btp">
+    <link name="base_link">
+        
+<inertial>
+            <origin xyz="0.1374 0.17784 0.29296" rpy="0 0 0" />
+            <mass value="1.6284" />
+            <inertia ixx="0.0049242" ixy="-1.1068E-07" ixz="1.4133E-05" iyy="0.0012571" iyz="6.8671E-06" izz="0.0040482" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/base_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/base_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_abd">
+        
+<inertial>
+            <origin xyz="0.060901 0.00077301 0.1073" rpy="0 0 0" />
+            <mass value="0.39057" />
+            <inertia ixx="0.0017341" ixy="-6.9806E-06" ixz="-0.0009688" iyy="0.0022726" iyz="-8.6331E-06" izz="0.0010696" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/right_abd.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/right_abd.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_right_abd" type="continuous">
+        <origin xyz="0.18866 -0.44997 0.15871" rpy="1.5762 -8.7598E-05 0" />
+        <parent link="base_link" />
+        <child link="right_abd" />
+        <axis xyz="0.99987 -0 0.016127" />
+        <limit lower="-1.57" upper="1.57" effort="50" velocity="2" />
+    </joint>
+    <link name="right_IR">
+        
+<inertial>
+            <origin xyz="-0.0392871810712728 0.0411109744677959 0.138935601316326" rpy="0 0 0" />
+            <mass value="0.603610840109084" />
+            <inertia ixx="0.000492310842165682" ixy="-2.43938943929523E-07" ixz="-1.74058723223123E-05" iyy="0.000854839735660645" iyz="2.49487643777159E-06" izz="0.00119850539145051" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/right_IR.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/right_IR.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_right_ir" type="fixed">
+        <origin xyz="0.23659 -0.03974 0.0041779" rpy="0 -0.008859 6.4417E-05" />
+        <parent link="right_abd" />
+        <child link="right_IR" />
+        <axis xyz="-0.00011727 -0.99997 0.0072704" />
+        <limit lower="-0.78" upper="0.78" effort="50" velocity="0" />
+    </joint>
+    <link name="right_thigh">
+        
+<inertial>
+            <origin xyz="-0.00587420466230082 -0.298902174142625 0.091775599276321" rpy="0 0 0" />
+            <mass value="1.15370911386034" />
+            <inertia ixx="0.00218007175592022" ixy="-1.55748585880625E-05" ixz="-4.42415137653492E-06" iyy="0.00132233462272001" iyz="5.74444533558131E-05" izz="0.00283882830556965" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/right_thigh.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/right_thigh.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_right_hip_flexion" type="continuous">
+        <origin xyz="-0.0098949 0.050182 -0.00036542" rpy="0 0.00014564 0.020031" />
+        <parent link="right_IR" />
+        <child link="right_thigh" />
+        <axis xyz="-5.6331E-05 0.0072704 0.99997" />
+        <limit lower="-1.57" upper="1.57" effort="50" velocity="2" />
+    </joint>
+    <link name="right_shin">
+        
+<inertial>
+            <origin xyz="-0.00484324975988659 -0.249966332784877 0.0473164354576108" rpy="0 0 0" />
+            <mass value="1.02843390965148" />
+            <inertia ixx="0.00235506979229389" ixy="-4.16475367765636E-05" ixz="-5.53584798297785E-06" iyy="0.00135441560259714" iyz="3.29601832998121E-05" izz="0.00314486729465403" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/right_shin.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/right_shin.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_knee_joint" type="continuous">
+        <origin xyz="-0.0080859 -0.43466 0.0031598" rpy="0 -4.2582E-05 -0.0058569" />
+        <parent link="right_thigh" />
+        <child link="right_shin" />
+        <axis xyz="-5.6331E-05 0.0072704 0.99997" />
+        <limit lower="0" upper="1.57" effort="50" velocity="2" />
+    </joint>
+    <link name="right_foot">
+        
+<inertial>
+            <origin xyz="0.0270286138870783 -0.0603750401354918 -0.0491138257398857" rpy="0 0 0" />
+            <mass value="0.488467661155972" />
+            <inertia ixx="0.615128535492023" ixy="3.500753715996E-06" ixz="-1.67688728203427E-08" iyy="00.990291323750016" iyz="-3.84872415697616E-06" izz="0.460939635747118" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0.030 -0.060 0" rpy="0 0 0" />
+            <geometry>
+                <!-- <mesh filename="package://exoskeleton_btp/meshes/right_foot.STL" /> -->
+                <box size="0.300 0.080 0.150"/>
+
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <!-- <mesh filename="package://exoskeleton_btp/meshes/right_foot.STL" /> -->
+                <box size="0.300 0.080 0.150"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_ankle_flexion" type="continuous">
+        <origin xyz="-0.0076107 -0.41617 0.0029527" rpy="0 -0.00017972 -0.024724" />
+        <parent link="right_shin" />
+        <child link="right_foot" />
+        <axis xyz="-5.6331E-05 0.0072704 0.99997" />
+        <limit lower="-0.78" upper="0.78" effort="50" velocity="2" />
+    </joint>
+    <link name="left_abd">
+        
+<inertial>
+            <origin xyz="0.0652322924298407 -0.00922698573131753 0.107372356173445" rpy="0 0 0" />
+            <mass value="0.390571538812804" />
+            <inertia ixx="0.00173406573408417" ixy="-6.98064356900783E-06" ixz="-0.000968802831064001" iyy="0.00227256938156413" iyz="-8.6330776029772E-06" izz="0.00106961365428043" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/left_abd.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/left_abd.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_left_abd" type="continuous">
+        <origin xyz="0.18936 -0.13768 0.14796" rpy="-1.5627 0.00013065 -0.032255" />
+        <parent link="base_link" />
+        <child link="left_abd" />
+        <axis xyz="0.99987 0 0.016127" />
+        <limit lower="-1.57" upper="1.57" effort="50" velocity="2" />
+    </joint>
+    <link name="left_IR">
+        
+<inertial>
+            <origin xyz="-0.0392990142875405 -0.0497943875974824 0.139669246292548" rpy="0 0 0" />
+            <mass value="0.603610840109083" />
+            <inertia ixx="0.000492310842165682" ixy="-2.43938943929588E-07" ixz="-1.74058723223128E-05" iyy="0.000854839735660643" iyz="2.49487643777121E-06" izz="0.0011985053914505" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/left_IR.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/left_IR.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_left_ir" type="fixed">
+        <origin xyz="0.24094 0.041166 0.0035141" rpy="0 -0.03127 0.00022748" />
+        <parent link="left_abd" />
+        <child link="left_IR" />
+        <axis xyz="0.00011727 0.99997 -0.0072704" />
+        <limit lower="-0.78" upper="0.78" effort="50" velocity="0" />
+    </joint>
+    <link name="left_thigh">
+        
+<inertial>
+            <origin xyz="-0.00587419889410834 -0.288902135446464 0.0917754024034975" rpy="0 0 0" />
+            <mass value="1.15370940261833" />
+            <inertia ixx="0.00218007113154743" ixy="-1.5574685975789E-05" ixz="-4.42993941603603E-06" iyy="0.00132233519439819" iyz="5.74409958686481E-05" izz="0.00283882929782907" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/left_thigh.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/left_thigh.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_left_hip_flexion" type="continuous">
+        <origin xyz="-0.0097064 -0.050721 0.00036823" rpy="0.01454 -0.00010065 -3.1123" />
+        <parent link="left_IR" />
+        <child link="left_thigh" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.57" upper="1.57" effort="50" velocity="2" />
+    </joint>
+    <link name="left_shin">
+        
+<inertial>
+            <origin xyz="0.0021572666461262 -0.242332427675037 -0.0452747616492767" rpy="0 0 0" />
+            <mass value="1.03950139195202" />
+            <inertia ixx="0.00235534748488329" ixy="1.0328444631963E-06" ixz="-5.62826250871304E-06" iyy="0.00135495549315268" iyz="-1.74678122164304E-05" izz="0.00314522174843718" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/left_shin.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://exoskeleton_btp/meshes/left_shin.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_left_knee_flexion" type="continuous">
+        <origin xyz="-0.0081444 -0.43466 0.0031598" rpy="-3.1343 0.00027035 3.1121" />
+        <parent link="left_thigh" />
+        <child link="left_shin" />
+        <axis xyz="0 0 -1" />
+        <limit lower="0" upper="1.57" effort="50" velocity="2" />
+    </joint>
+    <link name="left_foot">
+        
+<inertial>
+            <origin xyz="0.0267458471873576 -0.0597868208876867 0.0498052197209016" rpy="0 0 0" />
+            <mass value="0.490370608685154" />
+            <inertia ixx="0.615366860470383" ixy="7.52417050805258E-06" ixz="-5.27465873232875E-12" iyy="0.990180392648353" iyz="2.64536994064652E-12" izz="0.460940554043818" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0.030 -0.060 0" rpy="0 0 0" />
+            <geometry>
+                <!-- <mesh filename="package://exoskeleton_btp/meshes/right_foot.STL" /> -->
+                <box size="0.300 0.080 0.150"/>
+
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <!-- <mesh filename="package://exoskeleton_btp/meshes/right_foot.STL" /> -->
+                <box size="0.300 0.080 0.150"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_left_ankle_flexion" type="continuous">
+        <origin xyz="0.0031757 -0.40989 0" rpy="0 0 0" />
+        <parent link="left_shin" />
+        <child link="left_foot" />
+        <axis xyz="0 0 1" />
+        <limit lower="-0.78" upper="0.78" effort="50" velocity="2" />
+    </joint>
+    <!-- <link name="world" />
+    <joint name="world_joint" type="fixed">
+        <parent link="world" />
+        <child link="base_link" />
+        <origin xyz="0.0 0.0 1" rpy="0.0 0.0 0.0" />
+    </joint> -->
+    
+<transmission name="trans_joint_right_abd">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_right_abd">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_right_abd_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_joint_right_hip_flexion">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_right_hip_flexion">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_right_hip_flexion_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_right_knee_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="right_knee_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="right_knee_joint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_right_ankle_flexion">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="right_ankle_flexion">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="right_ankle_flexion_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_joint_left_abd">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_left_abd">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_left_abd_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_joint_left_hip_flexion">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_left_hip_flexion">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_left_hip_flexion_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    
+    <transmission name="trans_joint_left_knee_flexion">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_left_knee_flexion">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_left_knee_flexion_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_joint_left_ankle_flexion">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_left_ankle_flexion">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_left_ankle_flexion_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+  <link
+    name="rig_base_link">
+    <inertial>
+      <origin
+        xyz="0.49 -0.28213 -0.24"
+        rpy="0 0 0" />
+      <mass
+        value="1.5306" />
+      <inertia
+        ixx="3"
+        ixy="8.0882E-15"
+        ixz="-7.7592E-15"
+        iyy="3"
+        iyz="4.0073E-15"
+        izz="3" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/rig_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="pin1">
+    <inertial>
+      <origin
+        xyz="1.71101498143422E-08 -0.0395589484462103 1.84748782938726E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157921694406014" />
+      <inertia
+        ixx="1.03075142406506E-05"
+        ixy="1.21727503100021E-11"
+        ixz="-1.57404961727643E-13"
+        iyy="2.11290786395121E-07"
+        iyz="1.16507657337882E-12"
+        izz="1.03336371454732E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/pin1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/pin1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_pin1"
+    type="continuous">
+    <origin
+      xyz="-0.41117 -0.96 -0.89"
+      rpy="1.5708 0 0" />
+    <parent
+      link="rig_base_link" />
+    <child
+      link="pin1" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="wheel1">
+    <inertial>
+      <origin
+        xyz="0 -1.11022302462516E-16 0.000500000000000007"
+        rpy="0 0 0" />
+      <mass
+        value="0.0209936929076138" />
+      <inertia
+        ixx="3.34105875252629E-06"
+        ixy="-5.29395592033938E-23"
+        ixz="-1.26558633720613E-22"
+        iyy="3.34105875252629E-06"
+        iyz="-4.30133918527574E-23"
+        izz="6.62613432396561E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.020" radius="0.025"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.020" radius="0.025"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel1"
+    type="continuous">
+    <origin
+      xyz="0 -0.09 0"
+      rpy="1.5708 -0.094639 1.5708" />
+    <parent
+      link="pin1" />
+    <child
+      link="wheel1" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="pin2">
+    <inertial>
+      <origin
+        xyz="1.71101498525061E-08 -0.0395589484462106 1.84748785714284E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157921694406015" />
+      <inertia
+        ixx="1.03075142406506E-05"
+        ixy="1.21727503121143E-11"
+        ixz="-1.57404961674703E-13"
+        iyy="2.11290786395122E-07"
+        iyz="1.1650765749663E-12"
+        izz="1.03336371454733E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/pin2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/pin2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_pin2"
+    type="continuous">
+    <origin
+      xyz="0.88883 -0.96 -0.89"
+      rpy="1.5708 0 0" />
+    <parent
+      link="rig_base_link" />
+    <child
+      link="pin2" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="wheel2">
+    <inertial>
+      <origin
+        xyz="0 0 0.000499999999999723"
+        rpy="0 0 0" />
+      <mass
+        value="0.020993692907614" />
+      <inertia
+        ixx="3.34105875252632E-06"
+        ixy="-2.64697796016969E-23"
+        ixz="-1.49190295280064E-20"
+        iyy="3.34105875252632E-06"
+        iyz="2.35250166210081E-21"
+        izz="6.62613432396567E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.020" radius="0.025"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.020" radius="0.025"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel2"
+    type="continuous">
+    <origin
+      xyz="0 -0.0900000000000001 0"
+      rpy="1.5707963267949 -0.0946389386873221 1.5707963267949" />
+    <parent
+      link="pin2" />
+    <child
+      link="wheel2" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="pin3">
+    <inertial>
+      <origin
+        xyz="1.71101498525061E-08 -0.0395589484462106 1.84748777387611E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157921694406015" />
+      <inertia
+        ixx="1.03075142406506E-05"
+        ixy="1.2172750308802E-11"
+        ixz="-1.57404961793817E-13"
+        iyy="2.11290786395121E-07"
+        iyz="1.16507656974716E-12"
+        izz="1.03336371454733E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/pin3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/pin3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_pin3"
+    type="continuous">
+    <origin
+      xyz="0.88883 -0.02 -0.89"
+      rpy="1.5708 0 0" />
+    <parent
+      link="rig_base_link" />
+    <child
+      link="pin3" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="wheel3">
+    <inertial>
+      <origin
+        xyz="0 -1.11022302462516E-16 0.000499999999999945"
+        rpy="0 0 0" />
+      <mass
+        value="0.020993692907614" />
+      <inertia
+        ixx="3.34105875252633E-06"
+        ixy="-5.29395592033938E-23"
+        ixz="-1.49612157392466E-20"
+        iyy="3.34105875252632E-06"
+        iyz="2.25985743349487E-21"
+        izz="6.62613432396568E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.020" radius="0.025"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.020" radius="0.025"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel3"
+    type="continuous">
+    <origin
+      xyz="0 -0.0900000000000001 0"
+      rpy="1.5707963267949 -0.0946389386873223 1.5707963267949" />
+    <parent
+      link="pin3" />
+    <child
+      link="wheel3" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="pin4">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0157921694406015" />
+      <inertia
+        ixx="1.03075142406506E-05"
+        ixy="1.2172750308802E-11"
+        ixz="-1.57404961793817E-13"
+        iyy="2.11290786395121E-07"
+        iyz="1.16507656974716E-12"
+        izz="1.03336371454733E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/pin4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/pin1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_pin4"
+    type="continuous">
+    <origin
+      xyz="-0.411166444412457 -0.0200000000000018 -0.890000000000032"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="rig_base_link" />
+    <child
+      link="pin4" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="wheel4">
+    <inertial>
+      <origin
+        xyz="0 -0.0 0.000500000000000009"
+        rpy="0 0 0" />
+      <mass
+        value="0.0209936929076138" />
+      <inertia
+        ixx="3.34105875252629E-06"
+        ixy="-5.29395592033938E-23"
+        ixz="-1.26558633720613E-22"
+        iyy="3.34105875252629E-06"
+        iyz="-4.30133918527574E-23"
+        izz="6.62613432396561E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.020" radius="0.025"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.020" radius="0.025"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel4"
+    type="continuous">
+    <origin
+      xyz="0 -0.0909449772921084 0.00995525077119574"
+      rpy="1.5707963267949 -0.0946389386873223 1.5707963267949" />
+    <parent
+      link="pin4" />
+    <child
+      link="wheel4" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+    <joint name="exo_base_rig_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="rig_base_link" />
+        <origin xyz="0.06 0.180 0.35" rpy="0.0 0.0 0.0" />
+        <!-- <origin xyz="0.06 0.180 0.22925" rpy="0.0 0.0 0.0" /> -->
+    </joint>
+    <gazebo reference="left_foot">
+      <kp>1000000.0</kp> <!--contact stiffness-->
+      <kd>100.0</kd> <!--damping-->
+  </gazebo>
+    <gazebo reference="right_foot">
+      <kp>1000000.0</kp> <!--contact stiffness-->
+      <kd>100.0</kd> <!--damping-->
+  </gazebo>
+</robot>
+
+

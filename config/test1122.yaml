@@ -1,0 +1,24 @@
+left_abduction:
+  d: 0.0
+  i: 0.0
+  p: 0.0
+left_flexion:
+  d: 3.0
+  i: 0.0
+  p: 0.0
+left_knee:
+  d: 0.0
+  i: 0.0
+  p: 0.0
+right_abduction:
+  d: 0.0
+  i: 0.0
+  p: 0.0
+right_flexion:
+  d: 0.0
+  i: 0.0
+  p: 0.0
+right_knee:
+  d: 0.0
+  i: 0.0008000000000000001
+  p: 0.0

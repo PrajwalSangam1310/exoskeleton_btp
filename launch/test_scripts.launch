@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+<node name="trajectory_publisher" pkg="exoskeleton_btp" type="trajectory_publisher.py" output="screen"/>
+
+
+    
+
+</launch>

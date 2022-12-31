@@ -1,0 +1,2 @@
+uint16 velocity
+bool direction

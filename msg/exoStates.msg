@@ -1,0 +1,3 @@
+int16 STOP = 0
+int16 RIGHT_STANCE = 1
+int16 LEFT_STANCE = 2

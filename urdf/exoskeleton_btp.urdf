@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="exoskeleton_btp">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.1374 -0.29296 0.17784"
+        rpy="0 0 0" />
+      <mass
+        value="1.6284" />
+      <inertia
+        ixx="0.0049242"
+        ixy="-1.4133E-05"
+        ixz="-1.1068E-07"
+        iyy="0.0040482"
+        iyz="-6.8671E-06"
+        izz="0.0012571" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_hip_abd">
+    <inertial>
+      <origin
+        xyz="-0.43742 0.97921 0.70833"
+        rpy="0 0 0" />
+      <mass
+        value="0.39057" />
+      <inertia
+        ixx="0.0017341"
+        ixy="-6.9806E-06"
+        ixz="-0.0009688"
+        iyy="0.0022726"
+        iyz="-8.6331E-06"
+        izz="0.0010696" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/left_hip_abd.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/left_hip_abd.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_abd_joint"
+    type="revolute">
+    <origin
+      xyz="0.67224 -0.76251 1.1314"
+      rpy="-1.5627 0.00013065 -0.032255" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_hip_abd" />
+    <axis
+      xyz="-0.99987 0 -0.016127" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="50"
+      velocity="2" />
+  </joint>
+  <link
+    name="left_hip_IR">
+    <inertial>
+      <origin
+        xyz="0.39113 -0.15777 -0.00063677"
+        rpy="0 0 0" />
+      <mass
+        value="0.60361" />
+      <inertia
+        ixx="0.00049231"
+        ixy="-2.4394E-07"
+        ixz="-1.7406E-05"
+        iyy="0.00085484"
+        iyz="2.4949E-06"
+        izz="0.0011985" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/left_hip_IR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/left_hip_IR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_IR_joint"
+    type="revolute">
+    <origin
+      xyz="-0.69634 1.1375 0.73125"
+      rpy="0 -0.03127 0.00022748" />
+    <parent
+      link="left_hip_abd" />
+    <child
+      link="left_hip_IR" />
+    <axis
+      xyz="-0.00011727 -0.99997 0.0072704" />
+    <limit
+      lower="-0.78"
+      upper="0.78"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_thigh">
+    <inertial>
+      <origin
+        xyz="-0.005889 -0.29062 -0.040714"
+        rpy="0 0 0" />
+      <mass
+        value="1.1537" />
+      <inertia
+        ixx="0.0021801"
+        ixy="-1.5577E-05"
+        ixz="-4.428E-06"
+        iyy="0.0013223"
+        iyz="5.7443E-05"
+        izz="0.0028388" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/left_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/left_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_flexion"
+    type="continuous">
+    <origin
+      xyz="0.42071 -0.15849 -0.0074375"
+      rpy="0.01454 -0.00010065 -3.1123" />
+    <parent
+      link="left_hip_IR" />
+    <child
+      link="left_thigh" />
+    <axis
+      xyz="5.6331E-05 -0.0072704 -0.99997" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="50"
+      velocity="2" />
+  </joint>
+  <link
+    name="left_shin">
+    <inertial>
+      <origin
+        xyz="0.0021574 -0.24309 0.032772"
+        rpy="0 0 0" />
+      <mass
+        value="1.0395" />
+      <inertia
+        ixx="0.0023553"
+        ixy="1.0349E-06"
+        ixz="-5.6239E-06"
+        iyy="0.001355"
+        iyz="-1.7472E-05"
+        izz="0.0031452" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/left_shin.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/left_shin.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_knee_flexion"
+    type="continuous">
+    <origin
+      xyz="-0.0081414 -0.43505 -0.05129"
+      rpy="-3.1343 0.00027035 3.1121" />
+    <parent
+      link="left_thigh" />
+    <child
+      link="left_shin" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="50"
+      velocity="2" />
+  </joint>
+  <link
+    name="left_foot">
+    <inertial>
+      <origin
+        xyz="0.026746 -0.06054 0.079853"
+        rpy="0 0 0" />
+      <mass
+        value="0.49037" />
+      <inertia
+        ixx="0.00061537"
+        ixy="7.5242E-06"
+        ixz="-5.2319E-12"
+        iyy="0.00099018"
+        iyz="2.6246E-12"
+        izz="0.00046094" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/left_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/left_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_ankle_flexion"
+    type="revolute">
+    <origin
+      xyz="0.0031757 -0.40989 0.048"
+      rpy="0 0 0" />
+    <parent
+      link="left_shin" />
+    <child
+      link="left_foot" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.78"
+      upper="0.78"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_hip_abd">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/right_hip_abd.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/right_hip_abd.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_abd_joint"
+    type="revolute">
+    <origin
+      xyz="0.18866 -0.44997 0.15871"
+      rpy="1.5762 -8.7598E-05 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_hip_abd" />
+    <axis
+      xyz="-0.99987 0 -0.016127" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="50"
+      velocity="2" />
+  </joint>
+  <link
+    name="right_hip_IR">
+    <inertial>
+      <origin
+        xyz="-0.29558 0.96907 0.74644"
+        rpy="0 0 0" />
+      <mass
+        value="0.60361" />
+      <inertia
+        ixx="0.00049231"
+        ixy="-2.4394E-07"
+        ixz="-1.7406E-05"
+        iyy="0.00085484"
+        iyz="2.4949E-06"
+        izz="0.0011985" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/right_hip_IR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/right_hip_IR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_IR_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.01 0"
+      rpy="0 -0.008859 6.4417E-05" />
+    <parent
+      link="right_hip_abd" />
+    <child
+      link="right_hip_IR" />
+    <axis
+      xyz="-0.00011727 -0.99997 0.0072704" />
+    <limit
+      lower="-0.78"
+      upper="0.78"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_thigh">
+    <inertial>
+      <origin
+        xyz="0.41679 -0.13578 0.54096"
+        rpy="0 0 0" />
+      <mass
+        value="1.1537" />
+      <inertia
+        ixx="0.0021801"
+        ixy="-1.5576E-05"
+        ixz="-4.4301E-06"
+        iyy="0.0013223"
+        iyz="5.7444E-05"
+        izz="0.0028388" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/right_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/right_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_flexion"
+    type="revolute">
+    <origin
+      xyz="-0.68557 0.80659 0.15801"
+      rpy="0 0.00014564 0.020031" />
+    <parent
+      link="right_hip_IR" />
+    <child
+      link="right_thigh" />
+    <axis
+      xyz="-5.6331E-05 0.0072704 0.99997" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="50"
+      velocity="2" />
+  </joint>
+  <link
+    name="right_shin">
+    <inertial>
+      <origin
+        xyz="0.41134 -0.51907 0.49965"
+        rpy="0 0 0" />
+      <mass
+        value="1.0284" />
+      <inertia
+        ixx="0.0023551"
+        ixy="-4.165E-05"
+        ixz="-5.5356E-06"
+        iyy="0.0013544"
+        iyz="3.296E-05"
+        izz="0.0031449" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/right_shin.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/right_shin.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_knee_flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 -4.2582E-05 -0.0058569" />
+    <parent
+      link="right_thigh" />
+    <child
+      link="right_shin" />
+    <axis
+      xyz="-5.6331E-05 0.0072704 0.99997" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="50"
+      velocity="2" />
+  </joint>
+  <link
+    name="right_foot">
+    <inertial>
+      <origin
+        xyz="0.027021 -0.059446 0.078709"
+        rpy="0 0 0" />
+      <mass
+        value="0.48847" />
+      <inertia
+        ixx="0.00061513"
+        ixy="3.5008E-06"
+        ixz="-1.6769E-08"
+        iyy="0.00099029"
+        iyz="-3.8487E-06"
+        izz="0.00046094" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/right_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://exoskeleton_btp/meshes/right_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_ankle_flexion"
+    type="revolute">
+    <origin
+      xyz="0.40858 -0.68621 0.32746"
+      rpy="0 -0.00017972 -0.024724" />
+    <parent
+      link="right_shin" />
+    <child
+      link="right_foot" />
+    <axis
+      xyz="5.6331E-05 -0.0072704 -0.99997" />
+    <limit
+      lower="-0.78"
+      upper="0.78"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

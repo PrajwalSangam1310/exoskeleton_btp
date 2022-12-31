@@ -1,0 +1,2 @@
+uint16 velocity
+uint16 effort

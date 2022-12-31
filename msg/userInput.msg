@@ -1,0 +1,5 @@
+float32 stride_length
+float32 walking_speed
+float32 step_height
+uint8 action_selected
+uint8 is_on

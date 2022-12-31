@@ -1,0 +1,5 @@
+float32 position
+float32 velocity
+float32 battery_level
+float32 motor_current
+geometry_msgs/Quaternion imu

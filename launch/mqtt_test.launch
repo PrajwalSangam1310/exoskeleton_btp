@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+<node name="exo_ros_mqtt_endpoint" pkg="exoskeleton_btp" type="exo_ros_mqtt_endpoint.py" output="screen"/>
+<node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" output="screen"/>
+<!-- <node pkg="exoskeleton_btp"
+        type="set_mosquitto.sh" name="set_mosquitto"
+        output="screen" launch-prefix="sudo gnome-terminal"/> -->
+    
+
+</launch>

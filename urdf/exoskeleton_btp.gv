@@ -1,0 +1,38 @@
+digraph G {
+node [shape=box];
+"world" [label="world"];
+"base_link" [label="base_link"];
+"left_abd" [label="left_abd"];
+"left_IR" [label="left_IR"];
+"left_thigh" [label="left_thigh"];
+"left_shin" [label="left_shin"];
+"left_foot" [label="left_foot"];
+"right_abd" [label="right_abd"];
+"right_IR" [label="right_IR"];
+"right_thigh" [label="right_thigh"];
+"right_shin" [label="right_shin"];
+"right_foot" [label="right_foot"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"world" -> "world_joint" [label="xyz: 0 0 1 \nrpy: 0 -0 0"]
+"world_joint" -> "base_link"
+"base_link" -> "joint_left_abd" [label="xyz: 0.18936 -0.13768 0.14796 \nrpy: -1.5627 0.00013065 -0.032255"]
+"joint_left_abd" -> "left_abd"
+"left_abd" -> "joint_left_ir" [label="xyz: 0.24094 0.041166 0.0035141 \nrpy: -8.47447e-22 -0.03127 0.00022748"]
+"joint_left_ir" -> "left_IR"
+"left_IR" -> "joint_left_hip_flexion" [label="xyz: -0.0097064 -0.050721 0.00036823 \nrpy: 0.01454 -0.00010065 -3.1123"]
+"joint_left_hip_flexion" -> "left_thigh"
+"left_thigh" -> "joint_left_knee_flexion" [label="xyz: -0.0081444 -0.43466 0.0031598 \nrpy: -3.1343 0.00027035 3.1121"]
+"joint_left_knee_flexion" -> "left_shin"
+"left_shin" -> "joint_left_ankle_flexion" [label="xyz: 0.0031757 -0.40989 0 \nrpy: 0 -0 0"]
+"joint_left_ankle_flexion" -> "left_foot"
+"base_link" -> "joint_right_abd" [label="xyz: 0.18866 -0.44997 0.15871 \nrpy: 1.5762 -8.7598e-05 0"]
+"joint_right_abd" -> "right_abd"
+"right_abd" -> "joint_right_ir" [label="xyz: 0.23659 -0.03974 0.0041779 \nrpy: 0 -0.008859 6.4417e-05"]
+"joint_right_ir" -> "right_IR"
+"right_IR" -> "joint_right_hip_flexion" [label="xyz: -0.0098949 0.050182 -0.00036542 \nrpy: 2.11758e-22 0.00014564 0.020031"]
+"joint_right_hip_flexion" -> "right_thigh"
+"right_thigh" -> "right_knee_joint" [label="xyz: -0.0080859 -0.43466 0.0031598 \nrpy: 0 -4.2582e-05 -0.0058569"]
+"right_knee_joint" -> "right_shin"
+"right_shin" -> "right_ankle_flexion" [label="xyz: -0.0076107 -0.41617 0.0029527 \nrpy: -4.23516e-22 -0.00017972 -0.024724"]
+"right_ankle_flexion" -> "right_foot"
+}

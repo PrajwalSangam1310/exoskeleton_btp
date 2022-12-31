@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+<node name="exo_ros_mqtt_endpoint" pkg="exoskeleton_btp" type="exo_ros_mqtt_endpoint_mutiple_joints.py" output="screen"/>
+<!-- <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" output="screen"/> -->
+<node name="exo_execution_with_process_handler" pkg="exoskeleton_btp" type="exo_execution_with_process_handler.py" output="screen"/>
+<node name="exoskeleton_monitor" pkg="rqt_mypkg" type="rqt_mypkg" output="screen"/>
+</launch>
